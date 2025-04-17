@@ -83,8 +83,8 @@ section header {
   }
 }
 
-#ai {
-  grid-area: ai;
+#ia {
+  grid-area: ia;
   img {
     width: 176px;
     aspect-ratio: cover;
@@ -110,5 +110,125 @@ aside {
     width: 72px;
     aspect-ratio: 1/1;
     object-fit: cover;
+  }
+}
+
+@media (width < 80em) {
+  #featured {
+    grid-auto-flow: row;
+    gap: 0;
+
+    & figure:first-of-type img {
+      width: 328px;
+      height: 416px; /* Somente para a primeira imagem */
+      object-fit: cover;
+    }
+
+    /* Estilos para o restante */
+    & div .card img {
+      width: 328px;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card {
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        top: 50%;
+        background: linear-gradient(180deg, transparent 0%, #020617 100%);
+        width: 328px;
+      }
+    }
+
+    div {
+      grid-template-columns: 1fr;
+    }
+
+    figcaption {
+      max-width: 328px; /* Define o espaço máximo do container */
+      h2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* Define o número máximo de linhas */
+        line-clamp: compatibility;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-right: 1rem; /* Ajusta o espaço para cortar o texto antes */
+      }
+    }
+  }
+
+  #weekly {
+    max-width: 328px;
+    & > div {
+      grid-template-columns: repeat(1, 100%);
+    }
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  #ia {
+    max-width: 328px;
+
+    & article {
+      & div:first-of-type {
+        order: 2;
+
+        & h3 {
+          display: -webkit-box;
+          -webkit-line-clamp: 2; /* Define o número máximo de linhas */
+          line-clamp: compatibility;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          padding-right: 1rem; /* Ajusta o espaço para cortar o texto antes */
+        }
+
+        & p {
+          display: -webkit-box;
+          -webkit-line-clamp: 4; /* Define o número máximo de linhas */
+          line-clamp: compatibility;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          padding-right: 1rem; /* Ajusta o espaço para cortar o texto antes */
+        }
+      }
+
+      & div:last-of-type {
+        order: 1;
+
+        & img {
+          width: 80px;
+          height: 80px;
+        }
+      }
+    }
+  }
+
+  #more {
+    & div:first-of-type {
+      & h3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Define o número máximo de linhas */
+        line-clamp: compatibility;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-right: 1rem; /* Ajusta o espaço para cortar o texto antes */
+      }
+    }
+
+    & div:last-of-type {
+      & img {
+        width: 80px;
+        height: 80px;
+      }
+    }
   }
 }

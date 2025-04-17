@@ -23,3 +23,33 @@
 
   justify-content: space-between;
 }
+
+@media (width <= 80em) {
+  #primary {
+    div {
+      strong {
+        display: none;
+      }
+    }
+
+    div:nth-child(2) {
+      width: 100px;
+      height: 20px;
+    }
+
+    div:nth-child(3) {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  #secoundary {
+    display: flex; /* Layout flexível para os elementos */
+    gap: 32px; /* Espaçamento entre os links */
+    overflow-x: scroll; /* Permite o scroll horizontal */
+    scrollbar-width: none; /* Oculta a barra de rolagem */
+    -ms-overflow-style: none; /* Oculta para IE e Edge */
+    font: var(--text-sm); /* Aplica sua fonte */
+    white-space: nowrap; /* Impede a quebra de linha */
+  }
+}
