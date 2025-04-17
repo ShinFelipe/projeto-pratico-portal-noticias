@@ -210,8 +210,11 @@ aside {
       }
     }
   }
-
+  #ads {
+    width: 328px;
+  }
   #more {
+    width: 328px;
     & div:first-of-type {
       & h3 {
         display: -webkit-box;
